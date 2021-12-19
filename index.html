@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Avonale Movies</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <nav>
+          <div class="logo">
+            <h4>Avonale Movies</h4>
+          </div>
+          <button class="nav-links" v-on:click="showHome()">Home</button>
+          <button class="nav-links" v-on:click="showFavoriteList()">
+            Favorite Movies
+          </button>
+        </nav>
+        <div class="search-form">
+          <div class="search-container">
+            <input
+              v-model="searchTerm"
+              type="text"
+              placeholder="Search Movies..."
+              class="search"
+              id="search"
+            />
+            <button v-on:click="searchMovie()" class="search-button">
+              Search
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <div
+          v-for="movie in movieList"
+          class="movie"
+          v-if="currentPage === '/home'"
+        >
+          <img
+            :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
+            :alt="movie.title"
+          />
+          <div class="movie-info">
+            <h3>{{movie.title}}</h3>
+          </div>
+          <div class="overview">
+            <button
+              id="favButton"
+              v-on:click="saveAsFavoriteMovies(movie.title)"
+            >
+              Favorite ♥
+            </button>
+            <h3>Details</h3>
+            {{movie.overview}}
+          </div>
+        </div>
+
+        <div
+          v-if="currentPage === '/favoritos'"
+          v-for="movie in favoriteMovies"
+          class="movie"
+        >
+          <h3 class="fav-movies-list-h3">{{movie}}</h3>
+          <button
+            v-on:click="removeFavoriteMovies(movie)"
+            id="favButton"
+            class="fav-movies-list"
+          >
+            Remove
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="./src/app.js"></script>
+  </body>
+</html>
