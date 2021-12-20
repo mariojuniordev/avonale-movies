@@ -19,12 +19,15 @@ var app = new Vue({
   },
   methods: {
     getMovies: function (url) {
-      fetch(url)
+      const x = fetch(url)
         .then((res) => res.json())
         .then((data) => {
           this.movieList = data.results;
           this.isLoading = false;
         });
+      
+      console.log(x)
+
     },
     handleHomeButtonClick: function () {
       this.getMovies(API_URL);
