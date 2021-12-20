@@ -1,4 +1,4 @@
-<img src="assets/cover.png"/>
+<img src="assets/new_cover.png"/>
 
 
 
