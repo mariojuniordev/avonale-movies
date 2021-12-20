@@ -208,3 +208,23 @@ main {
 .fav-movies-list {
   margin: 1rem;
 }
+
+footer {
+  background: var(--secondary-color);
+  width: 100%;
+  height: 150px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  padding: 10px;
+}
+
+footer img{ 
+  height: 80px;
+  padding: 10px;
+  transition: 0.15s;
+}
+
+footer img:hover{ 
+  border: solid #fff;
+}

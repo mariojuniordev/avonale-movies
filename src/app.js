@@ -61,7 +61,7 @@ var app = new Vue({
 
       this.favoriteMovies = currentfavoriteMovies;
 
-      this.currentPage = '/favoritos';
+      this.currentPage = '/favorite';
     },
     /* showHome shows the main page, which has the top 20 most popular movies at the moment */
     showHome: function () {

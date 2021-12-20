@@ -9,6 +9,7 @@
   </head>
   <body>
     <div id="app">
+      <!--Navbar-->
       <header>
         <nav>
           <div class="logo">
@@ -27,6 +28,7 @@
               placeholder="Search Movies..."
               class="search"
               id="search"
+              v-on:submit="searchMovie()"
             />
             <button v-on:click="searchMovie()" class="search-button">
               Search
@@ -34,7 +36,7 @@
           </div>
         </div>
       </header>
-
+      <!--Home-->
       <main id="main">
         <div
           v-for="movie in movieList"
@@ -59,9 +61,9 @@
             {{movie.overview}}
           </div>
         </div>
-
+        <!--Favorite Movies Path-->
         <div
-          v-if="currentPage === '/favoritos'"
+          v-if="currentPage === '/favorite'"
           v-for="movie in favoriteMovies"
           class="movie"
         >
@@ -75,6 +77,15 @@
           </button>
         </div>
       </main>
+      <!--Footer-->
+      <footer>
+        Developed by Mário Júnior. Reach me on my Social Media!
+        <div>
+          <a href="https://www.linkedin.com/in/mariojuniordev/"><img src="assets/linkedin.png"/></a>
+          <a href="https://github.com/mariojuniordev"><img src="assets/github.png"/></a>
+        </div>
+      </footer>
+
     </div>
 
     <script src="./src/app.js"></script>
