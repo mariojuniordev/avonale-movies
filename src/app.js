@@ -29,14 +29,19 @@ var app = new Vue({
       console.log(x)
 
     },
+    /* handleHomeButtonClick shows the top 20 most popular movies at the moment */
     handleHomeButtonClick: function () {
       this.getMovies(API_URL);
     },
+    /* getFavoriteMovies accesses movies' names stored in an array called
+    'favorite' located in the local storage and returns it */
     getFavoriteMovies() {
       const arrFavorite = JSON.parse(localStorage.getItem('favorite'));
 
       return arrFavorite;
     },
+    /* saveAsFavoriteMovies saves movies names in an array to store them in 
+    the local storage */
     saveAsFavoriteMovies: function (movieTitle) {
       let favoriteMovies = this.getFavoriteMovies();
       if (!favoriteMovies) {
@@ -50,6 +55,8 @@ var app = new Vue({
       localStorage.setItem('favorite', JSON.stringify(favoriteMovies));
       alert(`${movieTitle} successfully added to favorite movies list!`);
     },
+    /* showFavoriteList gets the data stored in the 'favorite' array located
+    in the local storage*/
     showFavoriteList: function () {
       const currentfavoriteMovies = this.getFavoriteMovies();
 
@@ -57,9 +64,13 @@ var app = new Vue({
 
       this.currentPage = '/favoritos';
     },
+    /* showHome shows the main page, which has the top 20 most popular movies at the moment */
     showHome: function () {
+      this.getMovies(API_URL);
       this.currentPage = '/home';
     },
+    /* removeFavoriteMovies removes an specific movie present in the 'favorite'
+    array located in the local storage by its name  */
     removeFavoriteMovies: function (movieTitle) {
       const currentfavoriteMovies = this.getFavoriteMovies();
       const updatedFavoriteMovies = currentfavoriteMovies.filter(
@@ -69,6 +80,8 @@ var app = new Vue({
 
       this.favoriteMovies = updatedFavoriteMovies;
     },
+    /* searchMovie searches for a movie or movies depending on the text typed in
+    the search input */
     searchMovie: function () {
       this.isLoading = true;
 
@@ -79,6 +92,7 @@ var app = new Vue({
       }
     },
   },
+  /* mounted loads the main page which has the top 20 most popular movies at the moment */
   mounted: function () {
     this.getMovies(API_URL);
   },
