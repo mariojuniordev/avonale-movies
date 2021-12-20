@@ -10,7 +10,7 @@ Este repositório é destinado a um desafio de código proposto pela empresa Avo
 
 <h2>Como Executar o Projeto</h2>
 
-Para executar o projeto, basta executar o arquivo HTML em um navegador compatível.
+Para executar o projeto, basta executar o arquivo HTML em um navegador compatível (Preferencialmente Google Chrome ou Microsoft Edge).
 
 <h3>Requisitos Propostos pela Empresa</h3>
 
@@ -42,7 +42,7 @@ This repository is a code challenge proposed by the Avonale company. The applica
 
 <h2>How to Execute the Project</h2>
 
-To run the project, just run the HTML file in a supported browser. 
+To run the project, just run the HTML file in a supported browser (Ideally Google Chrome or Microsoft Edge). 
 
 <h3>Requirements proposed by the company</h3>
 
