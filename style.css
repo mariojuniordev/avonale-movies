@@ -199,7 +199,7 @@ main {
 }
 
 .fav-movies-list-h3 {
-  color: white;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   margin: 1rem 1rem 0;
@@ -212,15 +212,18 @@ main {
 footer {
   background: var(--secondary-color);
   width: 100%;
-  height: 150px;
+  height: 100px;
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-weight: 900;
+  font-weight: 500;
   padding: 10px;
+  position: fixed;
+  bottom: 0px;
+  opacity: 0.8;
 }
 
 footer img{ 
-  height: 80px;
+  height: 50px;
   padding: 10px;
   transition: 0.15s;
 }
