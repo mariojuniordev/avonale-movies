@@ -18,16 +18,15 @@ var app = new Vue({
     searchTerm: '',
   },
   methods: {
+    /* getMovies fetches the movies present in the TMDB API and converts the
+    responses to JSON format */
     getMovies: function (url) {
-      const x = fetch(url)
+      fetch(url)
         .then((res) => res.json())
         .then((data) => {
           this.movieList = data.results;
           this.isLoading = false;
         });
-      
-      console.log(x)
-
     },
     /* handleHomeButtonClick shows the top 20 most popular movies at the moment */
     handleHomeButtonClick: function () {
